@@ -54,9 +54,9 @@ export default {
       deviceWidth: 0,
       deviceHeight: 0,
       animateList1: [
-        { url: require("@/assets/7.png") },
-        { url: require("@/assets/31.png") },
         { url: require("@/assets/43.png") },
+        { url: require("@/assets/31.png") },
+        { url: require("@/assets/7.png") },
         { url: require("@/assets/90.png") }
       ],
       animateList2: [
@@ -114,18 +114,19 @@ $delayForP3: 12s;
     background-color: #d2e2ff;
     height: 100%;
     object-fit: cover;
-    animation: slidein 4s 1s forwards;
+    animation: slidein 4s 1s forwards ease;
   }
 
   & .textContainer1 {
     position: absolute;
-    top: 130px;
+    top: 110px;
     left: 50px;
     height: 210px;
     width: 120px;
     & img {
+      opacity: 0;
       height: 25%;
-      object-fit: cover;
+      object-fit: contain;
     }
   }
   & .textContainer2 {
@@ -133,11 +134,13 @@ $delayForP3: 12s;
     bottom: 0px;
     left: 0px;
     width: 100%;
-    height: 300px;
+    height: 36vh;
     & img {
+      opacity: 0;
       height: 100%;
       width: 100%;
-      animation: bounceInUp 1s ease 4s forwards, bounceOutDown 1s ease 6s forwards;
+      object-fit: fill;
+      animation: bounceInUp 1s ease 4s forwards;
     }
   }
   & .textContainer3 {
@@ -177,14 +180,16 @@ $delayForP3: 12s;
   }
   & .textContainer5 {
     position: absolute;
-    top: 75px;
+    top: 35px;
     left: 0;
-    animation: Expand 2s $delayForP3 forwards;
-    overflow: hidden;
+    width: 100vw;
     height: 0;
+    animation: Expand 1s $delayForP3 forwards ease;
+    overflow: hidden;
     & img {
       width: 100%;
-      object-fit: cover;
+      height: 100%;
+      object-fit: fill;
     }
   }
   & .textContainer6 {
@@ -233,23 +238,14 @@ $delayForP3: 12s;
   0% {
     transform: translate(0, 0);
   }
-  40% {
-    transform: translate(-106vw, 0);
+  50% {
+    transform: translate(-95vw, 0);
     opacity: 1;
   }
+
   100% {
     transform: scale(5) translate(-106vw, -19vh);
     opacity: 0;
-  }
-}
-
-@keyframes addBg {
-  from {
-    background-color: #d2e2ff;
-  }
-  to {
-    background-image: url("./../../assets/zhejiangMap.jpeg");
-    background-size: cover;
   }
 }
 
@@ -363,7 +359,7 @@ $delayForP3: 12s;
     height: 0;
   }
   to {
-    height: 100%;
+    height: 63vh;
   }
 }
 @keyframes flash {
