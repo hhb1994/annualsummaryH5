@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="mapContainer">
-      <img class="map" src="@/assets/map.png" />
+      <img class="map" src="@/assets/page1/map.png" />
       <div ref="p1">
         <div class="textContainer1">
           <img
@@ -12,35 +12,35 @@
           />
         </div>
         <div class="textContainer2">
-          <img src="@/assets/voice.png" alt />
+          <img src="@/assets/page1/voice.png" alt />
         </div>
       </div>
       <div ref="p2">
         <div class="textContainer3">
           <div v-for="(item,index) in animateList2" :key="index" :style="formatStyle(item,index)">
-            <img src="@/assets/location.png" />
+            <img src="@/assets/page1/location.png" />
             <img :src="item.url" />
           </div>
         </div>
         <div class="textContainer4" :style="formatStyle2()">
           <div class="img">
-            <img class="img1" src="@/assets/laba1.png" />
-            <img class="img2" src="@/assets/laba2.png" />
+            <img class="img1" src="@/assets/page1/laba1.png" />
+            <img class="img2" src="@/assets/page1/laba2.png" />
           </div>
         </div>
       </div>
       <div ref="p3">
         <div class="textContainer5">
-          <img src="@/assets/flag.png" alt />
+          <img src="@/assets/page1/flag.png" alt />
         </div>
         <div class="textContainer6">
-          <img src="@/assets/people.png" alt />
+          <img src="@/assets/page1/people.png" alt />
         </div>
         <div class="textContainer7">
-          <img src="@/assets/firework1.png" alt />
+          <img src="@/assets/page1/firework1.png" alt />
         </div>
         <div class="textContainer8">
-          <img src="@/assets/firework2.png" alt />
+          <img src="@/assets/page1/firework2.png" alt />
         </div>
       </div>
     </div>
@@ -54,22 +54,22 @@ export default {
       deviceWidth: 0,
       deviceHeight: 0,
       animateList1: [
-        { url: require("@/assets/43.png") },
-        { url: require("@/assets/31.png") },
-        { url: require("@/assets/7.png") },
-        { url: require("@/assets/90.png") }
+        { url: require("@/assets/page1/43.png") },
+        { url: require("@/assets/page1/31.png") },
+        { url: require("@/assets/page1/7.png") },
+        { url: require("@/assets/page1/90.png") }
       ],
       animateList2: [
-        { url: require("@/assets/putuo.png"), x: 135.4, y: 134.6 },
-        { url: require("@/assets/liandu.png"), x: 34.8, y: 309.6 },
-        { url: require("@/assets/yiwu.png"), x: 99.6, y: 349.8 },
-        { url: require("@/assets/longquan.png"), x: 103, y: 226.8 },
-        { url: require("@/assets/songyang.png"), x: 103.8, y: 439.2 },
-        { url: require("@/assets/kaihua.png"), x: 145.2, y: 320.4 },
-        { url: require("@/assets/lishui.png"), x: 186.6, y: 237.6 },
-        { url: require("@/assets/cangnan.png"), x: 285.2, y: 192 },
-        { url: require("@/assets/qingtian.png"), x: 274.8, y: 307.8 },
-        { url: require("@/assets/yuhang.png"), x: 227.4, y: 399 }
+        { url: require("@/assets/page1/putuo.png"), x: 135.4, y: 134.6 },
+        { url: require("@/assets/page1/liandu.png"), x: 34.8, y: 309.6 },
+        { url: require("@/assets/page1/yiwu.png"), x: 99.6, y: 349.8 },
+        { url: require("@/assets/page1/longquan.png"), x: 103, y: 226.8 },
+        { url: require("@/assets/page1/songyang.png"), x: 103.8, y: 439.2 },
+        { url: require("@/assets/page1/kaihua.png"), x: 145.2, y: 320.4 },
+        { url: require("@/assets/page1/lishui.png"), x: 186.6, y: 237.6 },
+        { url: require("@/assets/page1/cangnan.png"), x: 285.2, y: 192 },
+        { url: require("@/assets/page1/qingtian.png"), x: 274.8, y: 307.8 },
+        { url: require("@/assets/page1/yuhang.png"), x: 227.4, y: 399 }
       ]
     };
   },
@@ -78,7 +78,8 @@ export default {
       return `animation:bounceInDown 1s ${3 + index * 0.2}s forwards ease`;
     },
     formatStyle(item, index) {
-      return `top:${(item.y * this.deviceHeight) / 812}px;
+      return `
+      top:${(item.y * this.deviceHeight) / 812}px;
       left:${(item.x * this.deviceWidth) / 375}px;
       opacity: 0;
       height:${(this.deviceWidth * 84 * 3) / 1335}px;
@@ -89,8 +90,8 @@ export default {
     formatStyle2() {}
   },
   mounted() {
-    this.deviceWidth = document.body.offsetWidth;
-    this.deviceHeight = document.body.offsetHeight;
+    this.deviceWidth = window.innerWidth;
+    this.deviceHeight = window.innerHeight;
     setTimeout(() => {
       this.$refs.p1.style.display = "none";
     }, 7000);
@@ -100,7 +101,7 @@ export default {
   }
 };
 </script>
-<style lang="scss" scoped>
+<style lang="scss">
 $delayForP2: 7s;
 $delayForP3: 12s;
 .mapContainer {
@@ -108,7 +109,7 @@ $delayForP3: 12s;
   height: 100vh;
   overflow: hidden;
   position: relative;
-  background-image: url("./../../assets/zhejiangMap.jpeg");
+  background-image: url("./../../assets/page1/zhejiangMap.jpeg");
   background-size: cover;
   & .map {
     background-color: #d2e2ff;
@@ -119,22 +120,23 @@ $delayForP3: 12s;
 
   & .textContainer1 {
     position: absolute;
-    top: 110px;
-    left: 50px;
-    height: 210px;
-    width: 120px;
+    top: 20.8vh;
+    left: 39px;
+    height: 29.8vh;
+    width: 295px;
     & img {
       opacity: 0;
       height: 25%;
-      object-fit: contain;
+      
+      object-fit: fill;
     }
   }
   & .textContainer2 {
     position: absolute;
-    bottom: 0px;
-    left: 0px;
-    width: 100%;
-    height: 36vh;
+    bottom: 6.5vh;
+    left: 73px;
+    width: 240px;
+    height: 40.5vh;
     & img {
       opacity: 0;
       height: 100%;
@@ -166,7 +168,7 @@ $delayForP3: 12s;
         position: absolute;
         top: 0;
         left: 0;
-        animation: bounceInUp 1s $delayForP2 forwards, flash 1s infinite $delayForP2 forwards;
+        animation: bounceInUp 1s $delayForP2 forwards, zoomIn 1s infinite $delayForP2 forwards;
       }
       & .img2 {
         opacity: 0;
@@ -184,7 +186,7 @@ $delayForP3: 12s;
     left: 0;
     width: 100vw;
     height: 0;
-    animation: Expand 1s $delayForP3 forwards ease;
+    animation: Expand 0.3s $delayForP3 forwards ease;
     overflow: hidden;
     & img {
       width: 100%;
@@ -234,155 +236,7 @@ $delayForP3: 12s;
     }
   }
 }
-@keyframes slidein {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-95vw, 0);
-    opacity: 1;
-  }
 
-  100% {
-    transform: scale(5) translate(-106vw, -19vh);
-    opacity: 0;
-  }
-}
 
-@keyframes show {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
-}
-@keyframes disappear {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
 
-@keyframes bounceInUp {
-  from,
-  60%,
-  75%,
-  90%,
-  to {
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  from {
-    transform: translate3d(0, 3000px, 0);
-  }
-
-  60% {
-    opacity: 1;
-    transform: translate3d(0, -20px, 0);
-  }
-
-  75% {
-    transform: translate3d(0, 10px, 0);
-  }
-
-  90% {
-    transform: translate3d(0, -5px, 0);
-  }
-
-  to {
-    transform: translate3d(0, 0, 0);
-    opacity: 1;
-  }
-}
-
-@keyframes bounceInDown {
-  from,
-  60%,
-  75%,
-  90%,
-  to {
-    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1);
-  }
-
-  0% {
-    -webkit-transform: translate3d(0, -3000px, 0);
-    transform: translate3d(0, -3000px, 0);
-  }
-
-  60% {
-    -webkit-transform: translate3d(0, 25px, 0);
-    transform: translate3d(0, 25px, 0);
-  }
-
-  75% {
-    -webkit-transform: translate3d(0, -10px, 0);
-    transform: translate3d(0, -10px, 0);
-  }
-
-  90% {
-    -webkit-transform: translate3d(0, 5px, 0);
-    transform: translate3d(0, 5px, 0);
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-  }
-}
-
-@keyframes bounceOutDown {
-  0% {
-  }
-  20% {
-    -webkit-transform: translate3d(0, 10px, 0);
-    transform: translate3d(0, 10px, 0);
-  }
-
-  40%,
-  45% {
-    -webkit-transform: translate3d(0, -20px, 0);
-    transform: translate3d(0, -20px, 0);
-  }
-
-  to {
-    -webkit-transform: translate3d(0, 2000px, 0);
-    transform: translate3d(0, 2000px, 0);
-  }
-}
-
-@keyframes Expand {
-  from {
-    height: 0;
-  }
-  to {
-    height: 63vh;
-  }
-}
-@keyframes flash {
-  from,
-  50%,
-  to {
-    opacity: 1;
-  }
-
-  25%,
-  75% {
-    opacity: 0;
-  }
-}
-@keyframes zoomIn {
-  from {
-    opacity: 0;
-    -webkit-transform: scale3d(0.3, 0.3, 0.3);
-    transform: scale3d(0.3, 0.3, 0.3);
-  }
-
-  50% {
-    opacity: 1;
-  }
-}
 </style>

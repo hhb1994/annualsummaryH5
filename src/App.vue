@@ -49,7 +49,7 @@ export default {
     position: absolute;
     top: 10px;
     right: 10px;
-    z-index: 10;
+    z-index: 10000;
   }
 }
 </style>
