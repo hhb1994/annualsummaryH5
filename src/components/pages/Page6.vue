@@ -147,7 +147,7 @@ img {
       opacity: 0;
       position: relative;
       & p {
-        padding: 1px;
+        padding: 2px;
         border-radius: 5px;
         background-color: #0D249E;
         font-family: "ds-digitalbold";

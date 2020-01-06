@@ -18,6 +18,12 @@
     <div class="dec-container2">
       <img src="@/assets/page8/dec.png" />
     </div>
+    <div class="fire-container1">
+      <img src="@/assets/page8/firework1.png" alt />
+    </div>
+    <div class="fire-container2">
+      <img src="@/assets/page8/firework2.png" alt />
+    </div>
   </div>
 </template>
 <script>
@@ -95,6 +101,32 @@ img {
     // animation: flash 1s infinite forwards;
     & img {
       object-fit: fill;
+    }
+  }
+  & .fire-container1 {
+    width: 132px;
+    height: 132px;
+    position: absolute;
+    top: 75px;
+    left: 0;
+    & img {
+      opacity: 0;
+      width: 100%;
+      object-fit: cover;
+      animation: zoomIn 1s infinite 1.4s forwards;
+    }
+  }
+  & .fire-container2 {
+    width: 127px;
+    height: 198px;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    & img {
+      opacity: 0;
+      height: 100%;
+      object-fit: cover;
+      animation: zoomIn 1s infinite 1.4s forwards;
     }
   }
 }

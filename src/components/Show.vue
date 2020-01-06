@@ -28,6 +28,9 @@
       <div class="swiper-slide">
         <Page8 v-if="pageIndex>7" />
       </div>
+      <div class="swiper-slide">
+        <Page9 v-if="pageIndex>8" />
+      </div>
     </div>
     <!-- <div class="swiper-wrapper">
       <div class="swiper-slide">
@@ -57,9 +60,15 @@
       <div class="swiper-slide">
         <Page8 />
       </div>
+      <div class="swiper-slide">
+        <Page9 />
+      </div>
     </div>-->
     <div v-if="isSildeVisible" class="slider">
       <img src="@/assets/utils/slide.png" />
+    </div>
+    <div v-if="isShareShow" class="share" @click="hideShare()">
+      <Share />
     </div>
   </div>
 </template>
@@ -73,7 +82,10 @@ import Page5 from "./pages/Page5";
 import Page6 from "./pages/Page6";
 import Page7 from "./pages/Page7";
 import Page8 from "./pages/Page8";
+import Page9 from "./pages/Page9";
+import Share from "./pages/Share";
 import Swiper from "swiper";
+let vm = null;
 export default {
   name: "Show",
   components: {
@@ -85,24 +97,37 @@ export default {
     Page5,
     Page6,
     Page7,
-    Page8
+    Page8,
+    Page9,
+    Share
   },
   data() {
     return {
       isSildeVisible: false,
+      isShareShow: false,
       swiper: null,
       pageIndex: 0,
       swiperOption: {
         direction: "vertical",
         width: window.innerWidth,
-        height: window.innerHeight
+        height: window.innerHeight,
+        on: {
+          touchEnd: function() {
+            if (this.activeIndex == 9 && this.touches.diff < 0) {
+              vm.isShareShow = true;
+            }
+          }
+        }
       },
       timer: null,
-      timeList: [15000, 5000, 5000, 5000, 5000, 9000, 5000, 0]
+      timeList: [9000, 5000, 5000, 5000, 5000, 9000, 5000, 0]
     };
   },
   computed: {},
   methods: {
+    hideShare() {
+      this.isShareShow = false;
+    },
     slideNext() {
       this.swiper.slideNext();
     }
@@ -110,6 +135,9 @@ export default {
   mounted() {
     let swiperContainer = this.$refs.mySwiper;
     this.swiper = new Swiper(swiperContainer, this.swiperOption);
+  },
+  created() {
+    vm = this;
   },
   watch: {
     "swiper.activeIndex": function(newVal, oldVal) {
@@ -146,6 +174,11 @@ export default {
       object-fit: fill;
       animation: flash 2s infinite;
     }
+  }
+  & .share {
+    position: absolute;
+    top: 0;
+    z-index: 100;
   }
 }
 </style>

@@ -25,6 +25,11 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
 .loginContainer {
   width: 100vw;
   height: 100vh;
@@ -33,16 +38,13 @@ export default {
   position: relative;
   & .main-text {
     position: absolute;
-    top: 8vh;
-    left: 52px;
-    width: 234px;
-    height: 70vh;
-
-    & img {
-      object-fit: fill;
-      width: 100%;
-      height: 100%;
-    }
+    top: 5.16vh;
+    left: 2px;
+    width: 346px;
+    height: 82vh;
+    // & img{
+    //   object-fit: cover
+    // }
   }
   & .login-button {
     position: absolute;
@@ -50,10 +52,8 @@ export default {
     height: 140px;
     right: 68px;
     top: 41vh;
+    z-index: 1000;
     & img {
-      width: 100%;
-      height: 100%;
-      object-fit: fill;
       animation: brighter 2s infinite forwards linear;
     }
   }
@@ -63,12 +63,6 @@ export default {
     bottom: 103px;
     height: 27px;
     width: 202px;
-    & img {
-      width: 100%;
-      height: 100%;
-      object-fit: fill;
-    }
   }
 }
-
 </style>
