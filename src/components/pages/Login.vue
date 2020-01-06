@@ -33,7 +33,7 @@ img {
 .loginContainer {
   width: 100vw;
   height: 100vh;
-  background-image: url("./../../assets/page0/bg.png");
+  background-image: url("./../../assets/page0/bg.jpg");
   background-size: cover;
   position: relative;
   & .main-text {

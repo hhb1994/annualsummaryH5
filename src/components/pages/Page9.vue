@@ -7,10 +7,10 @@
       <img src="@/assets/page9/air.png" alt />
     </div>
     <div class="pic-container">
-      <img src="@/assets/page9/pic.png" alt />
+      <img src="@/assets/page9/img.png" alt />
     </div>
     <div class="text-container2">
-      <img src="@/assets/page9/text2.png" alt />
+      <p>左滑查看更多精彩照片</p>
     </div>
   </div>
 </template>
@@ -34,12 +34,12 @@ img {
   background-size: cover;
   & .text-container {
     position: absolute;
-    top: 15vh;
-    height: 29.4vh;
+    top: 3vh;
+    height: 47.4vh;
     width: 342px;
     left: 9px;
     opacity: 0;
-    animation: bounceInDown 1s .5s forwards;
+    animation: bounceInDown 1s 0.5s forwards;
   }
   & .air-container {
     position: absolute;
@@ -52,21 +52,32 @@ img {
   }
   & .pic-container {
     position: absolute;
-    width: 350px;
-    height: 20.36vh;
-    bottom: 27.1vh;
-    left: 14px;
+    width: 100vw;
+    height: 42.79vh;
+    bottom: 7.1vh;
+    left: 0;
     opacity: 0;
     animation: bounceIn 1s 1s forwards;
+    overflow-x: auto;
+    overflow-y: hidden;
+    & img {
+      height: 100%;
+      width: 800vw;
+      // object-fit: contain;
+    }
   }
   & .text-container2 {
     position: absolute;
     width: 223px;
     height: 1.84vh;
-    left: 78.7px;
-    bottom: 22.7vh;
+    left: 5.7px;
+    bottom: 9.7vh;
     opacity: 0;
     animation: bounceIn 1s 1s forwards;
+    & p {
+      font-size: 6px;
+      color: #666666;
+    }
   }
 }
 </style>

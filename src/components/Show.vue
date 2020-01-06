@@ -1,6 +1,6 @@
 <template>
   <div ref="mySwiper" class="swiper-container">
-    <div class="swiper-wrapper">
+    <!-- <div class="swiper-wrapper">
       <div class="swiper-slide">
         <Login @slideNext="slideNext()" />
       </div>
@@ -31,9 +31,9 @@
       <div class="swiper-slide">
         <Page9 v-if="pageIndex>8" />
       </div>
-    </div>
-    <!-- <div class="swiper-wrapper">
-      <div class="swiper-slide">
+    </div> -->
+    <div class="swiper-wrapper">
+      <!-- <div class="swiper-slide">
         <Login @slideNext="slideNext()" />
       </div>
       <div class="swiper-slide">
@@ -59,11 +59,11 @@
       </div>
       <div class="swiper-slide">
         <Page8 />
-      </div>
+      </div> -->
       <div class="swiper-slide">
         <Page9 />
       </div>
-    </div>-->
+    </div>
     <div v-if="isSildeVisible" class="slider">
       <img src="@/assets/utils/slide.png" />
     </div>
