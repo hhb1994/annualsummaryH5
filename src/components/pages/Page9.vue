@@ -55,11 +55,11 @@ img {
   & .pic-container {
     position: absolute;
     width: 100vw;
-    height: 37vh;
-    bottom: 7.1vh;
+    height: 300px;
+    bottom:  1.1vh;
     left: 0;
     opacity: 0;
-    animation: bounceIn 1s 1s forwards;
+    animation: bounceInUp 1s 1s forwards;
     overflow-x: auto;
     overflow-y: hidden;
     & img {
@@ -76,7 +76,7 @@ img {
     left: 0;
     bottom: 44.7vh;
     opacity: 0;
-    animation: bounceIn 1s 1s forwards;
+    animation: bounceInDown 1s 1s forwards;
     & p {
       font-size: 6px;
       color: white;
