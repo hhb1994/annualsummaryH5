@@ -57,7 +57,7 @@ img {
     width: 100%;
     height: 46.4vh;
     left: 0;
-    bottom: 4.5vh;
+    bottom: 9.5vh;
     opacity: 0;
     animation: bounceInUp 1s forwards;
   }
@@ -65,7 +65,7 @@ img {
     position: absolute;
     height: 51.3vh;
     width: 354px;
-    top: 13.4vh;
+    top: 8.4vh;
     left: 10px;
     opacity: 0;
     animation: bounceInDown 1s forwards;
@@ -73,7 +73,7 @@ img {
   & .title1,
   .title2 {
     position: absolute;
-    top: 18.9vh;
+    top: 13.9vh;
     height: 5.3vh;
     left: 131px;
     width: 101px;
@@ -82,7 +82,7 @@ img {
   & .text1,
   .text2 {
     position: absolute;
-    top: 25.9vh;
+    top: 20.9vh;
     height: 11vh;
     left: 57px;
     width: 261px;

@@ -118,7 +118,7 @@ img {
     bottom: 28vh;
     right: 0;
     opacity: 0;
-    animation: bounceInRight 1s 0.7s ease forwards;
+    animation: bounceInRight 1s 1s ease forwards;
   }
   & .bg-container {
     position: absolute;

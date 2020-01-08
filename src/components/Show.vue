@@ -1,6 +1,6 @@
 <template>
   <div ref="mySwiper" class="swiper-container">
-    <!-- <div class="swiper-wrapper">
+    <div class="swiper-wrapper">
       <div class="swiper-slide">
         <Login @slideNext="slideNext()" />
       </div>
@@ -8,36 +8,42 @@
         <Page1 v-if="pageIndex>0" />
       </div>
       <div class="swiper-slide">
-        <Page2 v-if="pageIndex>1" />
+        <Page1_2 v-if="pageIndex>1" />
       </div>
       <div class="swiper-slide">
-        <Page3 v-if="pageIndex>2" />
+        <Page2 v-if="pageIndex>2" />
       </div>
       <div class="swiper-slide">
-        <Page4 v-if="pageIndex>3" />
+        <Page3 v-if="pageIndex>3" />
       </div>
       <div class="swiper-slide">
-        <Page5 v-if="pageIndex>4" />
+        <Page4 v-if="pageIndex>4" />
       </div>
       <div class="swiper-slide">
-        <Page6 v-if="pageIndex>5" />
+        <Page5 v-if="pageIndex>5" />
       </div>
       <div class="swiper-slide">
-        <Page7 v-if="pageIndex>6" />
+        <Page6 v-if="pageIndex>6" />
       </div>
       <div class="swiper-slide">
-        <Page8 v-if="pageIndex>7" />
+        <Page7 v-if="pageIndex>7" />
       </div>
       <div class="swiper-slide">
-        <Page9 v-if="pageIndex>8" />
+        <Page8 v-if="pageIndex>8" />
       </div>
-    </div> -->
-    <div class="swiper-wrapper">
-      <!-- <div class="swiper-slide">
+      <div class="swiper-slide">
+        <Page9 v-if="pageIndex>9" />
+      </div>
+    </div>
+    <!-- <div class="swiper-wrapper">
+      <div class="swiper-slide">
         <Login @slideNext="slideNext()" />
       </div>
       <div class="swiper-slide">
         <Page1 />
+      </div>
+      <div class="swiper-slide">
+        <Page1_2 />
       </div>
       <div class="swiper-slide">
         <Page2 />
@@ -59,22 +65,24 @@
       </div>
       <div class="swiper-slide">
         <Page8 />
-      </div> -->
+      </div>
       <div class="swiper-slide">
         <Page9 />
       </div>
-    </div>
-    <div v-if="isSildeVisible" class="slider">
+    </div>-->
+    <div v-if="isSildeVisible&& !isLastPage" class="slider">
       <img src="@/assets/utils/slide.png" />
     </div>
-    <div v-if="isShareShow" class="share" @click="hideShare()">
-      <Share />
+    <div class="music-player">
+      <MusicPlayer ref="player" />
     </div>
+    <Share class="share" :isShareShow="isShareShow" @click.native.once="hideShare()" />
   </div>
 </template>
 <script>
 import Login from "./pages/Login";
 import Page1 from "./pages/Page1";
+import Page1_2 from "./pages/Page1_2";
 import Page2 from "./pages/Page2";
 import Page3 from "./pages/Page3";
 import Page4 from "./pages/Page4";
@@ -84,6 +92,7 @@ import Page7 from "./pages/Page7";
 import Page8 from "./pages/Page8";
 import Page9 from "./pages/Page9";
 import Share from "./pages/Share";
+import MusicPlayer from "./MusicPlayer";
 import Swiper from "swiper";
 let vm = null;
 export default {
@@ -91,6 +100,7 @@ export default {
   components: {
     Login,
     Page1,
+    Page1_2,
     Page2,
     Page3,
     Page4,
@@ -99,13 +109,15 @@ export default {
     Page7,
     Page8,
     Page9,
-    Share
+    Share,
+    MusicPlayer
   },
   data() {
     return {
       isSildeVisible: false,
       isShareShow: false,
       swiper: null,
+      isLast: false,
       pageIndex: 0,
       swiperOption: {
         direction: "vertical",
@@ -113,23 +125,34 @@ export default {
         height: window.innerHeight,
         on: {
           touchEnd: function() {
-            if (this.activeIndex == 9 && this.touches.diff < 0) {
+            if (this.activeIndex == 10 && this.touches.diff < -100 && !vm.isLast) {
+              vm.isLast = true;
               vm.isShareShow = true;
+            }
+          },
+          slideChange: function() {
+            if (this.previousIndex == 0) {
+              vm.$refs.player.$refs.audioPlayer.play();
             }
           }
         }
       },
       timer: null,
-      timeList: [9000, 5000, 5000, 5000, 5000, 9000, 5000, 0]
+      timeList: [7000, 5000, 5000, 5000, 5000, 5000, 9000, 5000, 0]
     };
   },
-  computed: {},
+  computed: {
+    isLastPage() {
+      return this.pageIndex == 10 ? true : false;
+    }
+  },
   methods: {
     hideShare() {
       this.isShareShow = false;
     },
     slideNext() {
       this.swiper.slideNext();
+      this.$refs.player.$refs.audioPlayer.play();
     }
   },
   mounted() {
@@ -164,21 +187,27 @@ export default {
   & .slider {
     z-index: 100;
     position: absolute;
-    top: 80vh;
-    left: 40vw;
-    width: 20%;
+    top: 85vh;
+    left: 43.5vw;
+    width: 13%;
     height: 6vh;
     & img {
       height: 100%;
       width: 100%;
-      object-fit: fill;
-      animation: flash 2s infinite;
+      object-fit: contain;
+      animation: slideMove 2s infinite linear;
     }
   }
   & .share {
     position: absolute;
     top: 0;
     z-index: 100;
+  }
+  & .music-player {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 10000;
   }
 }
 </style>

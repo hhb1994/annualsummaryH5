@@ -9,8 +9,10 @@
     <div class="pic-container">
       <img src="@/assets/page9/img.png" alt />
     </div>
-    <div class="text-container2">
-      <p>左滑查看更多精彩照片</p>
+    <div class="text-container2 flex flex-center">
+      <div>
+        <p>左滑查看更多精彩照片</p>
+      </div>
     </div>
   </div>
 </template>
@@ -34,7 +36,7 @@ img {
   background-size: cover;
   & .text-container {
     position: absolute;
-    top: 3vh;
+    top: 6vh;
     height: 47.4vh;
     width: 342px;
     left: 9px;
@@ -53,7 +55,7 @@ img {
   & .pic-container {
     position: absolute;
     width: 100vw;
-    height: 42.79vh;
+    height: 37vh;
     bottom: 7.1vh;
     left: 0;
     opacity: 0;
@@ -63,20 +65,23 @@ img {
     & img {
       height: 100%;
       width: 800vw;
-      // object-fit: contain;
+      object-fit: fill;
+      // object-fit: cover;
     }
   }
   & .text-container2 {
     position: absolute;
-    width: 223px;
+    width: 100%;
     height: 1.84vh;
-    left: 5.7px;
-    bottom: 9.7vh;
+    left: 0;
+    bottom: 44.7vh;
     opacity: 0;
     animation: bounceIn 1s 1s forwards;
     & p {
       font-size: 6px;
-      color: #666666;
+      color: white;
+      text-decoration: underline;
+      animation: flash 4s infinite linear forwards;
     }
   }
 }

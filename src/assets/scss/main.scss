@@ -7,6 +7,9 @@
   display: flex;
   flex-wrap: nowrap;
 }
+.flex-center {
+  justify-content: center;
+}
 @keyframes bounceInDown {
   from,
   60%,
@@ -407,31 +410,36 @@
   0% {
     background-position: 0 0;
   }
+  
   20% {
     background-position: 20% 0;
   }
+  
   40% {
     background-position: 40% 0;
   }
+  
   60% {
     background-position: 60% 0;
   }
+  
   80% {
     background-position: 80% 0;
   }
+  
   100% {
     background-position: 0 0;
   }
 }
 @keyframes peopleMove {
   0% {
-    transform: translateX(-80vw);
+    transform: translateX(-150vw);
   }
   50% {
-    transform: translateX(20vw);
+    transform: translateX(0);
   }
   100% {
-    transform: translateX(100vw);
+    transform: translateX(150vw);
   }
 }
 @keyframes bounce {
@@ -464,5 +472,16 @@
   90% {
     -webkit-transform: translate3d(0, -4px, 0);
     transform: translate3d(0, -4px, 0);
+  }
+}
+@keyframes slideMove {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(1.2vh);
+  }
+  100% {
+    transform: translateY(0);
   }
 }

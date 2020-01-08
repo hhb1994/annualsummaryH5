@@ -1,7 +1,7 @@
 <template>
   <div class="music-container">
     <img @click="switchMusicStatus()" :class="bindClass" src="@/assets/music/music.png" alt />
-    <audio ref="audioPlayer" src=""></audio>
+    <audio loop ref="audioPlayer" src="@/assets/music/main.mp3"></audio>
   </div>
 </template>
 <script>
@@ -9,20 +9,18 @@ export default {
   name: "MusicPlayer",
   data() {
     return {
-      isMusicEnable: true,
-      audioPlayer: null
+      audioPlayer: null,
+      isPlaying: false
     };
   },
   computed: {
     bindClass() {
-      return this.isMusicEnable ? "music-img rotate" : "music-img";
+      return this.isPlaying ? "music-img rotate" : "music-img";
     }
   },
   methods: {
     switchMusicStatus() {
-      let status = this.isMusicEnable;
-      this.isMusicEnable = !status;
-      if (this.isMusicEnable) {
+      if (this.audioPlayer.paused) {
         this.audioPlayer.play();
       } else {
         this.audioPlayer.pause();
@@ -31,6 +29,14 @@ export default {
   },
   mounted() {
     this.audioPlayer = this.$refs.audioPlayer;
+    this.$nextTick(() => {
+      this.audioPlayer.addEventListener("play", () => {
+        this.isPlaying = true;
+      });
+      this.audioPlayer.addEventListener("pause", () => {
+        this.isPlaying = false;
+      });
+    });
   }
 };
 </script>

@@ -4,6 +4,8 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+    <meta name="screen-orientation" content="portrait" />
+    <meta name="x5-orientation" content="portrait" />
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
     <title>融媒这一年</title>
   </head>
@@ -11,7 +13,9 @@
     <noscript>
       <strong>We're sorry but annual-summary doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
-    <div id="app"></div>
+    <div id="app">
+      <img style="width: 100vw;height:100vh" class="loading" src="./loading.gif" />
+    </div>
     <!-- built files will be auto injected -->
   </body>
   <style>
@@ -19,8 +23,12 @@
       padding: 0;
       margin: 0;
     }
-    body{
-      background-color: #D2E2FF;
+    body {
+      background-color: #d2e2ff;
+    }
+
+    .loading {
+      width: 100vw;
     }
   </style>
 </html>

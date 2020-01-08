@@ -63,19 +63,19 @@ img {
   }
   & .text-container1 {
     position: absolute;
-    top: 32.6vh;
-    left: 56.7px;
-    height: 11.1vh;
-    width: 256px;
+    top: 30.6vh;
+    left: 45.7px;
+    height: 14.1vh;
+    width: 286px;
     opacity: 0;
     animation: bounceInUp 1s forwards;
   }
   & .text-container2 {
     position: absolute;
     top: 47.6vh;
-    left: 56.7px;
-    height: 18vh;
-    width: 256px;
+    left: 40.7px;
+    height: 21vh;
+    width: 296px;
     opacity: 0;
     animation: bounceInUp 1s 0.5s forwards;
   }

@@ -1,5 +1,5 @@
 <template>
-  <div class="share-container">
+  <div v-if="isShareShow" class="share-container">
     <div class="text-container">
       <img src="@/assets/share/text.png" />
     </div>
@@ -11,6 +11,16 @@
     </div>
   </div>
 </template>
+<script>
+export default {
+  props: {
+    isShareShow: {
+      default: false
+    }
+  },
+  name: "Share"
+};
+</script>
 <style lang="scss" scoped>
 img {
   width: 100%;
@@ -25,11 +35,10 @@ img {
   position: relative;
   & .text-container {
     position: absolute;
-    top: 3.7vh;
+    top: 4.7vh;
     width: 112px;
-    left: 33px;
-    height: 47.4vh;
-    animation: Scale 1s infinite;
+    left: 83px;
+    height: 37.4vh;
   }
   & .p-container {
     position: absolute;

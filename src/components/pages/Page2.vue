@@ -126,7 +126,7 @@ export default {
     position: absolute;
     width: 25px;
     height: 3vh;
-    left: 38px;
+    left: 28px;
     top: 36vh;
     & .label {
       width: 100%;
@@ -140,7 +140,7 @@ export default {
     position: absolute;
     width: 25px;
     height: 3vh;
-    left: 38px;
+    left: 28px;
     top: 47vh;
     & .label {
       width: 100%;
@@ -152,9 +152,9 @@ export default {
   }
   & .text-container {
     position: absolute;
-    width: 271px;
-    height: 7.4vh;
-    left: 67px;
+    width: 311px;
+    height: 8.4vh;
+    left: 47px;
     top: 36vh;
     & .text {
       width: 100%;
@@ -166,9 +166,9 @@ export default {
   }
   & .text-container2 {
     position: absolute;
-    width: 271px;
-    height: 11.4vh;
-    left: 67px;
+    width: 311px;
+    height: 12.4vh;
+    left: 47px;
     top: 47vh;
     & .text {
       width: 100%;
