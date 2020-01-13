@@ -37,7 +37,7 @@ img {
   & .text-container {
     position: absolute;
     top: 6vh;
-    height: 47.4vh;
+    height: 37.4vh;
     width: 342px;
     left: 9px;
     opacity: 0;
@@ -56,7 +56,7 @@ img {
     position: absolute;
     width: 100vw;
     height: 300px;
-    bottom:  1.1vh;
+    bottom:  7.1vh;
     left: 0;
     opacity: 0;
     animation: bounceInUp 1s 1s forwards;
@@ -74,7 +74,7 @@ img {
     width: 100%;
     height: 1.84vh;
     left: 0;
-    bottom: 44.7vh;
+    bottom: 53.7vh;
     opacity: 0;
     animation: bounceInDown 1s 1s forwards;
     & p {
