@@ -72,9 +72,9 @@ img {
   }
   & .text-container2 {
     position: absolute;
-    top: 47.6vh;
+    top: 45.6vh;
     left: 40.7px;
-    height: 21vh;
+    height: 26vh;
     width: 296px;
     opacity: 0;
     animation: bounceInUp 1s 0.5s forwards;
