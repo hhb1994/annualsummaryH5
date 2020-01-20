@@ -7,10 +7,10 @@
     <meta name="screen-orientation" content="portrait" />
     <meta name="x5-orientation" content="portrait" />
     <link rel="icon" href="<%= BASE_URL %>favicon.ico" />
-    <title>融媒这一年</title>
+    <title>扬帆奋楫，融媒起航</title>
   </head>
   <body>
-    <img src="./share.jpeg" style="display: none;" />
+    <!-- <img src="./share.jpeg" style="position:absolute; top:0; left:0; width: 80%; z-index:-1;opacity: 0;" /> -->
     <noscript>
       <strong>We're sorry but annual-summary doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>
@@ -33,4 +33,56 @@
       width: 100vw;
     }
   </style>
+  <script src="https://res2.wx.qq.com/open/js/jweixin-1.6.0.js"></script>
+  <script>
+    var wxshareAuthAddress = "https://wxshare.cf:3001?url2=" + encodeURIComponent(window.location.href.split("#")[0]);
+    fetch(wxshareAuthAddress)
+      .then(res => {
+        res.json().then(res => {
+          wx.config({
+            debug: false,
+            appId: res.data.appId,
+            timestamp: res.data.timestamp,
+            nonceStr: res.data.nonceStr,
+            signature: res.data.signature,
+            jsApiList: ["updateTimelineShareData", "updateAppMessageShareData"] // 必填，需要使用的JS接口列表
+          });
+
+          wx.ready(function(res) {
+            console.log("ready");
+            wx.updateAppMessageShareData({
+              title: "扬帆奋楫，融媒起航", // 分享标题
+              desc: "我们的 2019", // 分享描述
+              link: "https://gs.zrtg.com/nh/", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+              imgUrl: "https://i.loli.net/2020/01/20/uCrYM3R7sAOE4VB.jpg", // 分享图标
+              success: function() {
+                // 设置成功
+                console.log("设置发送给微信好友消息成功");
+              }
+            });
+            // console.log(res);
+            // config信息验证后会执行ready方法，所有接口调用都必须在config接口获得结果之后，config是一个客户端的异步操作，所以如果需要在页面加载时就调用相关接口，则须把相关接口放在ready函数中调用来确保正确执行。对于用户触发时才调用的接口，则可以直接调用，不需要放在ready函数中。
+            wx.updateTimelineShareData({
+              title: "扬帆奋楫，融媒起航", // 分享标题
+              link: "https://gs.zrtg.com/nh", // 分享链接，该链接域名或路径必须与当前页面对应的公众号JS安全域名一致
+              imgUrl: "https://i.loli.net/2020/01/20/uCrYM3R7sAOE4VB.jpg", // 分享图标
+              success: function(res) {
+                // 设置成功
+                console.log("设置朋友圈分享成功");
+              }
+            });
+            // wx.showMenuItems({
+            //   menuList: ["menuItem:readMode", "menuItem:share:facebook"] // 要显示的菜单项，所有menu项见附录3
+            // });
+          });
+          wx.error(function(res) {
+            console.log("error" + res);
+            // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+          });
+        });
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  </script>
 </html>

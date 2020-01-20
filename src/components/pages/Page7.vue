@@ -15,10 +15,10 @@
       </div>
     </div>
     <div>
-      <div class="title2" :style="formatBounce(4)">
+      <div class="title2" :style="formatBounce(3)">
         <img src="@/assets/page7/title2.png" />
       </div>
-      <div class="text2" :style="formatBounce(4.5)">
+      <div class="text2" :style="formatBounce(3.5)">
         <img src="@/assets/page7/text2.png" />
       </div>
     </div>
@@ -35,7 +35,7 @@ export default {
   mounted() {
        setTimeout(() => {
       this.$refs.c1.style.display = "none";
-    }, 4000);
+    }, 3000);
   }
 };
 </script>

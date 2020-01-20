@@ -1,5 +1,9 @@
 <template>
   <div class="loginContainer">
+    <img
+      src="@/assets/share/share.jpeg"
+      style="position:absolute; top:0; left:0; width: 80%; z-index:-1;opacity: 0;"
+    />
     <div class="main-text">
       <img src="@/assets/page0/main-text.png" />
     </div>

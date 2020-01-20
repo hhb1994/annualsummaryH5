@@ -25,10 +25,10 @@ export default {
   data() {
     return {
       animateList1: [
-        { url: require("@/assets/page1/43.png") },
-        { url: require("@/assets/page1/31.png") },
-        { url: require("@/assets/page1/7.png") },
-        { url: require("@/assets/page1/90.png") }
+        { url: require("@/assets/page1/1.png") },
+        { url: require("@/assets/page1/2.png") },
+        { url: require("@/assets/page1/3.png") },
+        { url: require("@/assets/page1/4.png") }
       ]
     };
   },
@@ -65,7 +65,7 @@ export default {
     }
   }
   & .textContainer2 {
-    bottom: 3vh;
+    bottom: 5vh;
     left: 45px;
     width: 294px;
     height: 39.1vh;

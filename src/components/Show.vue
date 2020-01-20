@@ -32,7 +32,7 @@
         <Page8 v-if="pageIndex>8" />
       </div>
       <div class="swiper-slide">
-        <Page9 v-if="pageIndex>9" />
+        <Page9 v-if="pageIndex>9" @showShare="isShareShow=true" />
       </div>
     </div>
     <!-- <div class="swiper-wrapper">
@@ -76,7 +76,7 @@
     <div class="music-player">
       <MusicPlayer ref="player" />
     </div>
-    <Share class="share" :isShareShow="isShareShow" @click.native.once="hideShare()" />
+    <Share class="share" :isShareShow="isShareShow" @click.native="hideShare()" />
   </div>
 </template>
 <script>
@@ -124,12 +124,12 @@ export default {
         width: window.innerWidth,
         height: window.innerHeight,
         on: {
-          touchEnd: function() {
-            if (this.activeIndex == 10 && this.touches.diff < -100 && !vm.isLast) {
-              vm.isLast = true;
-              vm.isShareShow = true;
-            }
-          },
+          // touchEnd: function() {
+          //   if (this.activeIndex == 10 && this.touches.diff < -100 && !vm.isLast) {
+          //     vm.isLast = true;
+          //     vm.isShareShow = true;
+          //   }
+          // },
           slideChange: function() {
             if (this.previousIndex == 0) {
               vm.$refs.player.$refs.audioPlayer.play();
@@ -148,6 +148,7 @@ export default {
   },
   methods: {
     hideShare() {
+      console.log("hide share");
       this.isShareShow = false;
     },
     slideNext() {

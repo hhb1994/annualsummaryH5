@@ -14,11 +14,19 @@
         <p>左滑查看更多精彩照片</p>
       </div>
     </div>
+    <div class="button-container">
+      <img src="@/assets/page9/button.png" @click="showShare()" />
+    </div>
   </div>
 </template>
 <script>
 export default {
-  name: "Page9"
+  name: "Page9",
+  methods: {
+    showShare() {
+      this.$emit("showShare");
+    }
+  }
 };
 </script>
 <style lang="scss">
@@ -36,7 +44,7 @@ img {
   background-size: cover;
   & .text-container {
     position: absolute;
-    top: 6vh;
+    top: 4vh;
     height: 37.4vh;
     width: 342px;
     left: 9px;
@@ -45,7 +53,7 @@ img {
   }
   & .air-container {
     position: absolute;
-    top: 45.8vh;
+    top: 43.8vh;
     height: 6.4vh;
     width: 85px;
     left: 167px;
@@ -55,8 +63,8 @@ img {
   & .pic-container {
     position: absolute;
     width: 100vw;
-    height: 300px;
-    bottom:  7.1vh;
+    height: 37vh;
+    bottom: 19.1vh;
     left: 0;
     opacity: 0;
     animation: bounceInUp 1s 1s forwards;
@@ -74,7 +82,7 @@ img {
     width: 100%;
     height: 1.84vh;
     left: 0;
-    bottom: 53.7vh;
+    bottom: 57.7vh;
     opacity: 0;
     animation: bounceInDown 1s 1s forwards;
     & p {
@@ -83,6 +91,15 @@ img {
       text-decoration: underline;
       animation: flash 4s infinite linear forwards;
     }
+  }
+
+  & .button-container {
+    position: absolute;
+    bottom: 16vh;
+    width: 120px;
+    left: 130px;
+    opacity: 0;
+    animation: bounceInUp 0.1s 1s forwards, tada 1s infinite;
   }
 }
 </style>

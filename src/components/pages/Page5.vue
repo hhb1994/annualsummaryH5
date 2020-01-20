@@ -25,7 +25,7 @@ img {
 .page5-container {
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  // overflow: hidden;
   position: relative;
   background-image: url("./../../assets/utils/bg2.png");
   background-size: cover;
@@ -33,26 +33,26 @@ img {
     position: absolute;
     height: 76vh;
     width: 100%;
-    top: 12.3vh;
+    top: 10.3vh;
     & img {
-      object-fit: cover;
+      object-fit: fill;
     }
   }
   & .text-container1 {
     position: absolute;
-    height: 20.7vh;
+    height: 28.7vh;
     width: 319px;
-    top: 20.7vh;
+    top: 14.7vh;
     left: 34px;
     opacity: 0;
     animation: bounceInDown 1s 0.5s ease forwards;
   }
   & .text-container2 {
     position: absolute;
-    height: 27.8vh;
-    width: 319px;
-    top: 49.2vh;
-    left: 34px;
+    height: 29.8vh;
+    width: 339px;
+    top: 48.2vh;
+    left: 24px;
     opacity: 0;
     animation: bounceInUp 1s 0.5s ease forwards;
   }
