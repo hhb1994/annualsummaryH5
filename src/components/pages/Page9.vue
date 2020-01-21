@@ -63,8 +63,9 @@ img {
   & .pic-container {
     position: absolute;
     width: 100vw;
-    height: 37vh;
-    bottom: 19.1vh;
+    height: 38vh;
+    min-height: 270px;
+    top: 44.1vh;
     left: 0;
     opacity: 0;
     animation: bounceInUp 1s 1s forwards;
@@ -74,7 +75,7 @@ img {
       height: 100%;
       width: 800vw;
       object-fit: fill;
-      // object-fit: cover;
+      // object-fit: contain;
     }
   }
   & .text-container2 {
@@ -86,7 +87,7 @@ img {
     opacity: 0;
     animation: bounceInDown 1s 1s forwards;
     & p {
-      font-size: 6px;
+      font-size: 8px;
       color: white;
       text-decoration: underline;
       animation: flash 4s infinite linear forwards;
@@ -95,7 +96,7 @@ img {
 
   & .button-container {
     position: absolute;
-    bottom: 16vh;
+    bottom: 8vh;
     width: 120px;
     left: 130px;
     opacity: 0;
