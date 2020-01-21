@@ -32,7 +32,10 @@
         <Page8 v-if="pageIndex>8" />
       </div>
       <div class="swiper-slide">
-        <Page9 v-if="pageIndex>9" @showShare="isShareShow=true" />
+        <Page8_2 v-if="pageIndex>9" />
+      </div>
+      <div class="swiper-slide">
+        <Page9 v-if="pageIndex>10" @showShare="isShareShow=true" />
       </div>
     </div>
     <!-- <div class="swiper-wrapper">
@@ -90,6 +93,7 @@ import Page5 from "./pages/Page5";
 import Page6 from "./pages/Page6";
 import Page7 from "./pages/Page7";
 import Page8 from "./pages/Page8";
+import Page8_2 from "./pages/Page8_2";
 import Page9 from "./pages/Page9";
 import Share from "./pages/Share";
 import MusicPlayer from "./MusicPlayer";
@@ -108,6 +112,7 @@ export default {
     Page6,
     Page7,
     Page8,
+    Page8_2,
     Page9,
     Share,
     MusicPlayer
@@ -138,17 +143,16 @@ export default {
         }
       },
       timer: null,
-      timeList: [7000, 5000, 5000, 5000, 5000, 5000, 9000, 5000, 0]
+      timeList: [7000, 5000, 5000, 5000, 5000, 5000, 9000, 5000, 5000, 0]
     };
   },
   computed: {
     isLastPage() {
-      return this.pageIndex == 10 ? true : false;
+      return this.pageIndex == 11 ? true : false;
     }
   },
   methods: {
     hideShare() {
-      console.log("hide share");
       this.isShareShow = false;
     },
     slideNext() {

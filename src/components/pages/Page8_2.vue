@@ -4,14 +4,12 @@
       <img src="@/assets/page8/bg.png" />
     </div>
     <div class="title-container">
-      <img src="@/assets/page8/title.png" />
+      <img src="@/assets/page8_2/title.png" />
     </div>
     <div class="text-container1">
-      <img src="@/assets/page8/text1.png" />
+      <img src="@/assets/page8_2/text1.png" />
     </div>
-    <div class="text-container2">
-      <img src="@/assets/page8/text2.png" />
-    </div>
+   
     <div class="dec-container1">
       <img src="@/assets/page8/dec.png" />
     </div>
@@ -28,7 +26,7 @@
 </template>
 <script>
 export default {
-  name: "Page8"
+  name: "Page8_2"
 };
 </script>
 <style lang="scss" scoped>
@@ -57,36 +55,27 @@ img {
   & .title-container {
     position: absolute;
     top: 24vh;
-    left: 138px;
-    width: 105px;
+    left: 83px;
+    width: 205px;
     height: 5.3vh;
   }
   & .text-container1 {
     position: absolute;
-    top: 30.6vh;
+    top: 35.6vh;
     left: 45.7px;
-    height: 14.1vh;
+    height: 18.1vh;
     width: 286px;
     opacity: 0;
     animation: bounceInUp 1s forwards;
   }
-  & .text-container2 {
-    position: absolute;
-    top: 45.6vh;
-    left: 40.7px;
-    height: 26vh;
-    width: 296px;
-    opacity: 0;
-    animation: bounceInUp 1s 0.5s forwards;
-  }
+
   & .dec-container1 {
     position: absolute;
     top: 0;
     left: 0;
     height: 18vh;
     width: 100%;
-    // opacity: 0;
-    // animation: flash 1s infinite forwards;
+   
     & img {
       object-fit: fill;
     }
@@ -97,35 +86,30 @@ img {
     left: 0;
     height: 18vh;
     width: 100%;
-    // opacity: 0;
-    // animation: flash 1s infinite forwards;
+   
     & img {
       object-fit: fill;
     }
   }
   & .fire-container1 {
-    width: 132px;
-    height: 132px;
+    width: 215px;
+    height: 215px;
     position: absolute;
-    top: 125px;
-    left: 0;
+    top: 425px;
+    left: -30px;
     & img {
       opacity: 0;
-      width: 100%;
-      object-fit: contain;
       animation: zoomIn 1s infinite 1.4s forwards;
     }
   }
   & .fire-container2 {
-    width: 127px;
-    height: 198px;
+    width: 210px;
+    height: 240px;
     position: absolute;
-    top: 90px;
-    right: 0;
+    top: 430px;
+    right: -20px;
     & img {
       opacity: 0;
-      height: 100%;
-      object-fit: contain;
       animation: zoomIn 1s infinite 1.4s forwards;
     }
   }
