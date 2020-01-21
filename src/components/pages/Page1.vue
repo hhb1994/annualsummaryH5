@@ -55,7 +55,7 @@ export default {
   }
   & .textContainer1 {
     position: absolute;
-    top: 20.8vh;
+    top: 12vh;
     left: 40px;
     height: 29.8vh;
     width: 295px;
@@ -65,7 +65,7 @@ export default {
     }
   }
   & .textContainer2 {
-    bottom: 5vh;
+    bottom: 12vh;
     left: 45px;
     width: 294px;
     height: 39.1vh;

@@ -63,7 +63,7 @@ img {
   & .title-contianer {
     position: absolute;
     left: 51px;
-    top: 11.6vh;
+    top: 8.6vh;
     width: 260px;
     height: 11.5vh;
     opacity: 0;
@@ -74,7 +74,7 @@ img {
     height: 24.2vh;
     width: 557px;
     left: 10px;
-    top: 27.3vh;
+    top: 24.3vh;
     & .flex {
       height: 25%;
     }
@@ -91,7 +91,7 @@ img {
   }
   & .bg-contianer {
     position: absolute;
-    top: 24vh;
+    top: 22vh;
     height: 32.4vh;
     width: 368px;
     left: 3px;
@@ -104,14 +104,14 @@ img {
     width: 330px;
     height: 43vh;
     left: 20px;
-    bottom: 0;
+    bottom: 2vh;
   }
   & .line-contianer {
     position: absolute;
     width: 150px;
     height: 1.3vh;
     left: 60px;
-    bottom: 38vh;
+    bottom: 40vh;
     opacity: 0;
     animation: bounceIn 1s 1s ease forwards, scan 1.5s infinite 1s forwards ease;
   }

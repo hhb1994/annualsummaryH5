@@ -66,7 +66,7 @@ img {
   & .title-contianer {
     position: absolute;
     left: 51px;
-    top: 11.6vh;
+    top: 8.6vh;
     width: 260px;
     height: 11.5vh;
     opacity: 0;
@@ -74,8 +74,8 @@ img {
   }
   & .pc-container {
     position: absolute;
-    left: 16px;
-    top: 24.2vh;
+    left: 36px;
+    top: 21.2vh;
     width: 290px;
     height: 29vh;
     & img {
@@ -86,8 +86,8 @@ img {
     position: absolute;
     height: 19.2vh;
     width: 250px;
-    left: 30px;
-    top: 25.3vh;
+    left: 47px;
+    top: 22.3vh;
     & .flex {
       height: 33%;
     }

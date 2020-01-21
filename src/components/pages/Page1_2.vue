@@ -20,16 +20,16 @@ export default {
       deviceWidth: 0,
       deviceHeight: 0,
       animateList2: [
-        { url: require("@/assets/page1_2/putuo.png"), x: 185.4, y: 80.6 },
-        { url: require("@/assets/page1_2/liandu.png"), x: 20.8, y: 419.6 },
-        { url: require("@/assets/page1_2/yiwu.png"), x: 209.6, y: 349.8 },
-        { url: require("@/assets/page1_2/songyang.png"), x: 119, y: 369 },
-        { url: require("@/assets/page1_2/kaihua.png"), x: 0, y: 320.4 },
-        { url: require("@/assets/page1_2/lishui.png"), x: 106.6, y: 267.6 },
-        { url: require("@/assets/page1_2/cangnan.png"), x: 163, y: 439 },
-        { url: require("@/assets/page1_2/qingtian.png"), x: 254.8, y: 307.8 },
-        { url: require("@/assets/page1_2/yuhang.png"), x: 227.4, y: 199 },
-        { url: require("@/assets/page1_2/longquan.png"), x: 103, y: 156.8 }
+        { url: require("@/assets/page1_2/putuo.png"), x: 185.4, y: 0.6 },
+        { url: require("@/assets/page1_2/liandu.png"), x: 20.8, y: 309.6 },
+        { url: require("@/assets/page1_2/yiwu.png"), x: 209.6, y: 279.8 },
+        { url: require("@/assets/page1_2/songyang.png"), x: 129, y: 309 },
+        { url: require("@/assets/page1_2/kaihua.png"), x: 10, y: 200.4 },
+        { url: require("@/assets/page1_2/lishui.png"), x: 126.6, y: 207.6 },
+        { url: require("@/assets/page1_2/cangnan.png"), x: 163, y: 349 },
+        { url: require("@/assets/page1_2/qingtian.png"), x: 254.8, y: 247.8 },
+        { url: require("@/assets/page1_2/yuhang.png"), x: 227.4, y: 139 },
+        { url: require("@/assets/page1_2/longquan.png"), x: 103, y: 96.8 }
       ]
     };
   },
