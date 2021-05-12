@@ -11,7 +11,7 @@
     "gsap": "^3.0.4",
     "postcss-loader": "^3.0.0",
     "postcss-px-to-viewport": "^1.1.1",
-    "swiper": "^5.2.1",
+    "swiper": "^6.5.1",
     "vue": "^2.6.10"
   },
   "devDependencies": {
